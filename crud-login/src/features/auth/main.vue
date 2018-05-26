@@ -14,8 +14,11 @@ export default {
 		}
 	},
 	methods: {
+		navigate () {
+			this.$bus.$emit('navigate', this.navigation)
+		},
 		doSignIn (obj) {
-			window.console.log(obj)
+			window.console.log(obj)	
 		}
 	}
 }
@@ -46,7 +49,7 @@ export default {
 		<div class="login-form">
 
 			<sign-in @do-sign-in="doSignIn"/>
-			<sign-up/>
+			<sign-up @do-sign-up="doSignUp"/>
 
 		</div>
 	</div>
